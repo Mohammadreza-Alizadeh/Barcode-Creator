@@ -1,0 +1,4 @@
+flask
+zeep
+SQLAlchemy
+flask_sqlalchemy
