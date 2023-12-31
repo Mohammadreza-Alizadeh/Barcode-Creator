@@ -1,0 +1,39 @@
+<div id="register-form" class="form-contact">
+    <div class="text-center">
+        <h3 class="color-linear d-inline-block mb-10">فرم ثبت نام</h3>
+        <p class="text-xs color-gray-500">هزینه شرکت در همایش 20 هزارتومان میباشد</p>
+    </div>
+    <div class="row mt-50">
+        <form action="{{url_for('register')}}" class="row" method="post">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input required class="form-control bg-gray-850 border-gray-800 color-gray-500" name="first_name"type="text" placeholder="نام *">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input required class="form-control bg-gray-850 border-gray-800 color-gray-500" name="last_name" type="text" placeholder="نام خانوادگی *">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input required class="form-control bg-gray-850 border-gray-800 color-gray-500" name="student_code" type="text" placeholder="شماره دانشجویی *">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input  class="form-control bg-gray-850 border-gray-800 color-gray-500" type="text" name="phone_number" placeholder="شماره تلفن *">
+            </div>
+        </div>
+        <div class="col-lg-12">
+            {% include "layouts/message.html" %}
+        </div>
+        
+        <div class="col-lg-12">
+            <div class="text-center mb-50">
+                <input type="submit" class="btn btn-linear btn-load-more btn-radius-8 hover-up" value="پرداخت و ثبت نام">
+            </div>
+        </div>
+    </form>
+    </div>
+</div>

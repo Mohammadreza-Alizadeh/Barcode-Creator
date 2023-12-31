@@ -1,0 +1,70 @@
+{% extends "layouts/index.html" %}
+
+{% block title_tag %}
+    انجمن علمی کامپیوتر دانشکده شهید منتظری
+{% endblock title_tag %}
+
+{% block body_tag %}
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="text-center"><img class="mb-10 w-25" src="{{url_for('static', filename='assets/imgs/template/anj-spinner.gif')}}"  alt="Anjoman">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <main class="main" style="margin-top:-50px">
+        <div class="cover-home1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-1"></div>
+                    <div class="col-xl-10 col-lg-12">
+                        <div class="banner">
+                            <div class="row align-items-end">
+                                <div class="col-lg-6 pt-100"><span class="text-sm-bold color-gray-600 wow animate__animated animate__fadeInUp"></span>
+                                    <h1  style="font-size:60px;" class="color-linear color-gray-50 mt-20 mb-20 wow animate__animated animate__fadeInUp">انجمن علمی کامپیوتر برگزار میکند</h1>
+                                    <div class="row">
+                                        <div class="col-lg-9">
+                                            <p class="text-base color-gray-600 wow animate__animated animate__fadeInUp">همایش دانشجویی مسیر موفیقیت با حضور دکتر شاهین فرهنگ در تاریخ پانزدهم دی ماه 1402 در سالن همایش دانشکده شهید منتظری برگزار می شود.</p>
+                                        </div>
+                                    </div>
+                                    <a href="#register-form">
+                                        <div class="box-subscriber mt-40 mb-50 wow animate__animated animate__fadeInUp">
+                                            <div class="inner-subscriber bg-gray-800 justify-content-center">
+                                                    <h3 style="color:#63bce5;">
+                                                        ثبت نام در همایش
+                                                    </h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 text-center">
+                                    <div class="banner-img position-relative wow animate__animated animate__fadeIn"><img src="{{url_for('static', filename='assets/imgs/page/homepage1/backimg-min.gif')}}" alt="Genz">
+                                        <div class="pattern-2"><img src="{{url_for('static', filename='assets/imgs/template/pattern-2.svg')}}" alt="particle"></div>
+                                        <div class="pattern-3"><img src="{{url_for('static', filename='assets/imgs/template/pattern-3.svg')}}" alt="particle"></div>
+                                        <div class="pattern-4"><img src="{{url_for('static', filename='assets/imgs/template/pattern-4.svg')}}" alt="particle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5 position-relative go-to-front">
+            {% include "layouts/register-form.html" %}
+        </div>
+    
+        
+    </main>
+
+
+
+    {% include "layouts/footer.html" %}
+
+{% endblock body_tag %}

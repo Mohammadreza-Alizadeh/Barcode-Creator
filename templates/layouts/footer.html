@@ -1,0 +1,93 @@
+<footer id="footer" class="footer" style="margin-bottom:-180px">
+    <div class="container">
+        <div class="footer-1 bg-gray-850 border-gray-800">
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-30"><a class="wow animate__animated animate__fadeInUp" href="#">
+                    <img class="logo-night" src="{{url_for('static', filename= 'assets/imgs/template/backimg-min.gif')}}" alt="anjoman">
+                    <img class="d-none logo-day" alt="anjoman" src="{{url_for('static', filename= 'assets/imgs/template/backimg-min.gif')}}"></a>
+                </div>
+                <div class="col-lg-4 mb-30">
+                    <h6 class="text-lg mb-30 color-white wow animate__animated animate__fadeInUp">درباره ما</h6>
+                    <p class="mb-20 mt-20 text-sm color-gray-500 wow animate__animated animate__fadeInUp">انجمن علمی کامپیوتر دانشکده شهید منتظری از سال 1401 فعالیت خود را با اعضای جدید آغاز کرد و تا کنون با برگزاری همایش ها، دوره ها و بازدید های مختلف به فعالیت خود ادامه میدهد</p>
+                    <h6 class="text-lg mb-30 color-white wow animate__animated animate__fadeInUp">ارتباط با ما</h6>
+                    <div class="text-center mt-30">
+                        <div class="d-inline-block plane text-start" style="text-align: right !important;">@computer_motzeri_bot</div>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-4 mb-30">
+                    <div class="text-center">
+                        {% if barcode %}
+                            <div id="barcode" class="text-center"></div>
+                            <div id="download-button">
+                                <div class="box-subscriber mt-40 mb-50 wow animate__animated animate__fadeInUp">
+                                    <div class="inner-subscriber bg-gray-800 justify-content-center">
+                                            <h3 style="color:#63bce5;">
+                                                دانلود بارکد
+                                            </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        {% else %}
+                            <img src="{{url_for('static' , filename='assets/imgs/template/default-img.png')}}" width="150" alt="barcod">
+                        {% endif %}
+                    </div>
+                    <div class="box-subscriber mt-40 mb-50 wow animate__animated animate__fadeInUp">
+                        <div class="inner-subscriber bg-gray-800">
+                            <form class="d-flex" action="{{url_for('barcode')}}" method="post">
+                                <input class="input-sybscriber" required type="text"id="barcode_student_code" name="barcode_student_code" placeholder="شماره دانشجویی">
+                                <button id="get-barcode" class="btn btn-linear btn-arrow-right">ساخت بارکد<i class="fi-rr-arrow-small-right" ></i></button>
+                            </form>    
+                        </div>
+                    </div>
+                    <div>
+                        <p>اگر قبلا ثبت نام کردی از اینجا میتونی بارکدت رو دریافت کنی</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="footer-bottom border-gray-800">
+                <div class="row">
+                    <div class="col-lg-5 text-center text-lg-start">
+                        <p class="text-base color-white wow animate__animated animate__fadeIn">ساخته شده با عشق توسط بچه های کامپیوتر :)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</footer>
+
+
+    {% if barcode %}
+    <script type="text/javascript">
+        const qrCode = new QRCodeStyling({
+            width: 300,
+            height: 300,
+            type: "svg",
+            image: "{{url_for('static', filename='assets/imgs/template/backimg-min.gif')}}",
+            data: "{{barcode}}",
+            dotsOptions: {
+                color: "#63bce5",
+                type: "rounded"
+            },
+            backgroundOptions: {
+                color: "#131c31",
+                
+            },
+            imageOptions: {
+                crossOrigin: "anonymous",
+                margin:0
+            }
+            
+        });
+
+        document.getElementById('download-button').addEventListener( 'click' ,(e)=> {
+            console.log('hello')
+            qrCode.download({ name: "anjoman", extension: "png" });
+        })
+        qrCode.append(document.getElementById("barcode"));
+        scrollBy(0, 1000)
+    </script>
+    {% endif %}

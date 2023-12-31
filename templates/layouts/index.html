@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msapplication-TileColor" content="#0E0E0E">
+    <meta name="template-color" content="#0E0E0E">
+    <meta name="description" content="Index page">
+    <meta name="keywords" content="index, page">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='assets/imgs/template/favicon.svg') }} ">
+    <link href="{{url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/css/style-rtl.css')}}" rel="stylesheet">
+    <title>{% block title_tag %}{% endblock title_tag %}</title>
+    <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+
+</head>
+<body>
+    {% block body_tag %}{% endblock body_tag %}
+
+
+    <script src="{{url_for('static', filename='assets/js/vendors/modernizr-3.6.0.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendors/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendors/jquery-migrate-3.3.0.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendors/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendors/waypoints.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendors/wow.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendors/text-type.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendors/swiper-bundle.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendors/jquery.progressScroll.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+</body>
+</html>

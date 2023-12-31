@@ -1,0 +1,75 @@
+{% extends "layouts/index.html" %}
+{% block title_tag %}
+    وضعیت پرداخت
+{% endblock title_tag %}
+{% block body_tag %}
+
+<main class="main">
+    <div class="cover-home3">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 col-lg-12 m-auto mt-50">
+                    <div class="box-form-login pb-50">
+                        <div class="form-login bg-gray-850 border-gray-800 text-start" style="text-align: right !important;">
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    {% for message in messages %}
+                                    <div class="text-center mb-3">
+                                        <h4 class="color-linear">
+                                            {{ message }}
+                                        </h4>        
+                                    </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                            <div id="barcode" class="text-center"></div>
+                            <div id="download-button">
+                                <div class="box-subscriber mt-40 mb-50 wow animate__animated animate__fadeInUp">
+                                    <div class="inner-subscriber bg-gray-800 justify-content-center">
+                                            <h3 style="color:#63bce5;">
+                                                دانلود بارکد
+                                            </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <p style="line-height:normal;">درصورتی که امکان ذخیره بارکد رو ندارید نگران نباشید</p>
+                                <p style="line-height:normal;">شما میتوانید با ارائه کارت دانشجویی منطبق بر شماره دانشجویی ای که وارد کردید وارد همایش شوید. همچنین میتوانید بارکد خود را بعدا از <a href="{{url_for('index')}}" style="color:red" >اینجا</a> دانلود کنید</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        const qrCode = new QRCodeStyling({
+            width: 300,
+            height: 300,
+            type: "svg",
+            image: "{{url_for('static', filename='assets/imgs/template/backimg-min.gif')}}",
+            data: "{{barcode}}",
+            dotsOptions: {
+                color: "#63bce5",
+                type: "rounded"
+            },
+            backgroundOptions: {
+                color: "#131c31",
+                
+            },
+            imageOptions: {
+                crossOrigin: "anonymous",
+                margin:0
+            }
+            
+        });
+        document.getElementById('download-button').addEventListener( 'click' ,(e)=> {
+            console.log('hello')
+            qrCode.download({ name: "anjoman", extension: "png" });
+        })
+        qrCode.append(document.getElementById("barcode"));
+    </script>
+</main>
+
+{% endblock body_tag %}
