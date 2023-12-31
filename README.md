@@ -69,3 +69,5 @@ just simply enter this command to start the app :
 ```
 flask run
 ```
+
+Remember, if you want to use zarinpal you have to put your merchant id in `app.py`, otherwise you get an error when you try to submit information via form in 'home.html' 
