@@ -48,7 +48,7 @@ after that you will enter to interactive command-line tool for flask
 now you have to import some objects with commands bellow
 ```
 from database import db
-from models import Students
+from models import Student
 ```
 
 now you have to create tables  
